@@ -12,7 +12,8 @@ from sklearn.model_selection import train_test_split
 #Local imports
 from src.localpaths import *
 
-@click.group() #decorator
+#decorator
+@click.group() 
 def cli():
     pass
 
@@ -35,6 +36,28 @@ def create_train_test_split():
     X_test.to_csv(X_TEST_RAW_PATH, index = False)
     y_train.to_csv(Y_TRAIN_RAW_PATH, index = False)
     y_test.to_csv(Y_TEST_RAW_PATH, index = False)
+
+# Helper function for loading training and testing data, instead of using the localpaths functions everytime
+
+def load_training_data():
+    """ Return the X_train and y_train data if they exist
+    """
+    X_train = pd.read_csv(X_TRAIN_RAW_PATH)
+    y_train = pd.read_csv(Y_TRAIN_RAW_PATH)
+    
+    return X_train, y_train
+
+
+def load_test_data():
+    """ 
+    Return the X_test and y_test data if they exist
+    """
+    X_test = pd.read_csv(X_TEST_RAW_PATH)
+    y_test = pd.read_csv(Y_TEST_RAW_PATH)
+    
+    return X_test, y_test
+    
+
 
 
 if __name__ == "__main__":
