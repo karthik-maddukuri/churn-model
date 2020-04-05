@@ -1,5 +1,6 @@
 # Standard imports
 import os
+import pickle
 import sys
 sys.path.append('.') 
 
@@ -73,7 +74,7 @@ def transform_binary_categorical(X_train):
 
 
 
-def one_hot_encode_categorical_features(X_train):
+def one_hot_encode_categorical_features(X_train, save_encoder=True):
     """
     This one hot encodes the categorical features, add these to X-train,
     then drops the original columsn. Returns the transformed X_train data as dataframe
@@ -90,6 +91,12 @@ def one_hot_encode_categorical_features(X_train):
 
     X_train = X_train.assign(**ohe_df)
     X_train = X_train.drop(columns=cols_to_one_hot_encode )
+
+    if save_encoder:
+        ohe_filepath = os.path.join(SRC_FEATURES_DIRECTORY, 'ohe-hot-encoder.pkl')
+        print('pickling one-hot-encoder')
+        with open(ohe_filepath, 'wb') as f:
+            pickle.dump(ohe, f)
 
     return X_train
 
