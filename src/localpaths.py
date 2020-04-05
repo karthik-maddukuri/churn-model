@@ -25,3 +25,10 @@ Y_TEST_RAW_PATH = os.path.join(RAW_DATA_DIRECTORY, 'y_test.csv')
 
 X_TRAIN_CLEAN_PATH = os.path.join(INTERIM_DATA_DIRECTORY, 'X_train.csv')
 Y_TRAIN_CLEAN_PATH = os.path.join(INTERIM_DATA_DIRECTORY, 'y_train.csv')
+
+
+# File paths for featurized trian test split and ready for modeling
+
+X_TRAIN_FEATURIZED_PATH = os.path.join(PROCESSED_DATA_DIRECTORY, 'X_train.csv')
+Y_TRAIN_FEATURIZED_PATH = os.path.join(PROCESSED_DATA_DIRECTORY, 'y_train.csv')
+
