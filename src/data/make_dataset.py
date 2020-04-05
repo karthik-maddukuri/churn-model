@@ -37,8 +37,33 @@ def create_train_test_split():
     y_train.to_csv(Y_TRAIN_RAW_PATH, index = False)
     y_test.to_csv(Y_TEST_RAW_PATH, index = False)
 
-# Helper function for loading training and testing data, instead of using the localpaths functions everytime
 
+@cli.command()
+def create_clean_training_data():
+    """
+    Reads in the raw X and y trainging data, cleans it and writes the clean
+    training data out to the data/interim directory
+    """
+    print('loading data')
+    X_train, y_train = load_training_data()
+
+    print('cleaning data')
+    bad_values_idxs = X_train[X_train['TotalCharges'] == ' '].index
+    X_train.loc[bad_values_idxs, 'TotalCharges'] = 20
+    X_train['TotalCharges'] = X_train['TotalCharges'].astype(float)
+
+    print('Writing data')
+    X_train.to_csv(X_TRAIN_CLEAN_PATH, index = False)
+    y_train.to_csv(Y_TRAIN_CLEAN_PATH, index = False)
+
+
+
+
+
+
+
+
+# Helper function for loading training and testing data, instead of using the localpaths functions everytime
 def load_training_data():
     """ Return the X_train and y_train data if they exist
     """
