@@ -91,3 +91,6 @@ target/
 #Pickle filws
 
 *.pkl
+
+#CSV files
+*.csv
