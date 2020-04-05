@@ -28,6 +28,7 @@ def create_featurized_data():
 
     print('Featurizing data')
     X_train = drop_customer_id(X_train)
+    X_train = transform_binary_categorical(X_train)
 
     print('Saving data') 
     X_train.to_csv(X_TRAIN_FEATURIZED_PATH, index = False) 
@@ -40,6 +41,19 @@ def drop_customer_id(X_train):
     This drops the cusotmer id column from X_train
     """
     X_train = X_train.drop(columns=['customerID'])
+
+    return X_train
+
+
+def transform_binary_categorical(X_train):
+    """
+    Change binary categorical features to 0s and 1s
+    """
+    X_train['gender'] = X_train['gender'].map({'Female': 1, 'Male': 0})
+    X_train['Partner'] = X_train['Partner'].map({'Yes': 1, 'No': 0})
+    X_train['Dependents'] = X_train['Dependents'].map({'Yes': 1, 'No': 0})
+    X_train['PhoneService'] = X_train['PhoneService'].map({'Yes': 1, 'No': 0})
+    X_train['PaperlessBilling'] = X_train['PaperlessBilling'].map({'Yes': 1, 'No': 0})
 
     return X_train
 
