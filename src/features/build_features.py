@@ -17,6 +17,18 @@ from src.data.make_dataset import load_training_data
 def cli():
     pass
 
+
+def featurize_X_train(X_train):
+    """
+    Applies featurization to X_train only
+    """
+    X_train = drop_customer_id(X_train)
+    X_train = transform_binary_categorical(X_train)
+
+    return X_train
+
+    
+
 @cli.command()
 def create_featurized_data():
     """
@@ -27,8 +39,7 @@ def create_featurized_data():
     X_train, y_train = load_training_data(clean=True)
 
     print('Featurizing data')
-    X_train = drop_customer_id(X_train)
-    X_train = transform_binary_categorical(X_train)
+    X_train = featurize_X_train(X_train)
     y_train = transform_target(y_train)
 
     print('Saving data') 
