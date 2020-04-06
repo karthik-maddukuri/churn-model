@@ -85,6 +85,15 @@ def load_model_results():
     df_results = pd.read_csv(model_results_filepath)
     return df_results
 
+def load_pickled_model(model_filename):
+    """
+    Retuns the unpickeld model when we give the name of the pickled model
+    """
+    with open(os.path.join(MODELS_DIRECTORY, model_filename), 'rb') as f:
+        model = pickle.load(f)
+
+    return model
+
 
 if __name__ == "__main__":
     pass
