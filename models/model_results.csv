@@ -19,3 +19,29 @@ model_filename,model_string,accuracy,precision,recall,f1,roc_auc
                    multi_class='auto', n_jobs=None, penalty='l2',
                    random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
                    warm_start=False)",0.8019663283736131,0.6533657019574384,0.5294964028776978,0.5843908935972427,0.8403934941812942
+1199677766716801792.pkl,"DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
+                       max_depth=None, max_features=None, max_leaf_nodes=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, presort='deprecated',
+                       random_state=None, splitter='best')",0.7304042673661879,0.4968243815201981,0.4906474820143885,0.4926751948824747,0.6550068642216222
+1314119684742514432.pkl,"AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=1.0,
+                   n_estimators=50, random_state=None)",0.8000697012700325,0.6519819750097086,0.5151079136690647,0.574919660984165,0.8372404624224759
+1934686941463014656.pkl,"GradientBoostingClassifier(ccp_alpha=0.0, criterion='friedman_mse', init=None,
+                           learning_rate=0.1, loss='deviance', max_depth=3,
+                           max_features=None, max_leaf_nodes=None,
+                           min_impurity_decrease=0.0, min_impurity_split=None,
+                           min_samples_leaf=1, min_samples_split=2,
+                           min_weight_fraction_leaf=0.0, n_estimators=100,
+                           n_iter_no_change=None, presort='deprecated',
+                           random_state=None, subsample=1.0, tol=0.0001,
+                           validation_fraction=0.1, verbose=0,
+                           warm_start=False)",0.8013974298328603,0.6615038036742094,0.5057553956834532,0.5722438466631026,0.8423190985113973
+2302888930092139776.pkl,"RandomForestClassifier(bootstrap=True, ccp_alpha=0.0, class_weight=None,
+                       criterion='gini', max_depth=None, max_features='auto',
+                       max_leaf_nodes=None, max_samples=None,
+                       min_impurity_decrease=0.0, min_impurity_split=None,
+                       min_samples_leaf=1, min_samples_split=2,
+                       min_weight_fraction_leaf=0.0, n_estimators=100,
+                       n_jobs=None, oob_score=False, random_state=None,
+                       verbose=0, warm_start=False)",0.7887144863966056,0.6388473689587159,0.476978417266187,0.541474222570416,0.8222268021157653
