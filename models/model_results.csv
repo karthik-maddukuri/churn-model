@@ -1,11 +1,21 @@
-model_filename,model_string,accuracy
+model_filename,model_string,accuracy,precision,recall,f1,roc_auc
 1462994562544665856.pkl,"LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
                    intercept_scaling=1, l1_ratio=None, max_iter=100,
                    multi_class='auto', n_jobs=None, penalty='l2',
                    random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
-                   warm_start=False)",0.7956093868281605
+                   warm_start=False)",0.7956093868281605,,,,
 1854848146051119104.pkl,"LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
                    intercept_scaling=1, l1_ratio=None, max_iter=100,
                    multi_class='auto', n_jobs=None, penalty='l2',
                    random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
-                   warm_start=False)",0.7956093868281605
+                   warm_start=False)",0.7956093868281605,,,,
+1701978539907614976.pkl,"LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)",0.7956093868281605,,,,
+2053777711421553920.pkl,"LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+                   intercept_scaling=1, l1_ratio=None, max_iter=1000,
+                   multi_class='auto', n_jobs=None, penalty='l2',
+                   random_state=None, solver='lbfgs', tol=0.0001, verbose=0,
+                   warm_start=False)",0.8019663283736131,0.6533657019574384,0.5294964028776978,0.5843908935972427,0.8403934941812942
