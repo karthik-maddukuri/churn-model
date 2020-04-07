@@ -25,3 +25,7 @@ model_filename,model_string,accuracy,precision,recall,f1,roc_auc
                        min_weight_fraction_leaf=0.0, n_estimators=100,
                        n_jobs=None, oob_score=False, random_state=None,
                        verbose=0, warm_start=False)",0.7782990739944383,0.6153496516874971,0.4510791366906474,0.512437617958586,0.8108747006176851
+1017545180110469376.pkl,"AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=0.6,
+                   n_estimators=50, random_state=None)",0.8008279937501792,0.6596524116306273,0.5028776978417266,0.5700426232769373,0.8451291031814799
+1126852098189955072.pkl,"AdaBoostClassifier(algorithm='SAMME.R', base_estimator=None, learning_rate=0.6,
+                   n_estimators=50, random_state=None)",0.8008279937501792,0.6596524116306273,0.5028776978417266,0.5700426232769373,0.8451291031814799
