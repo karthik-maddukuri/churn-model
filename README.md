@@ -1,1 +1,2 @@
 # CHURN MODEL
+The goal of this project is to predict the behavior to retain customers of an entity. The dataset includes information about the services that each customer has signed up for (phone, internet, online security, tech, TV, etc), customer account info (tenure, contract, payment method, monthly charges, etc), demographic info of the customers (gender, age, etc).
