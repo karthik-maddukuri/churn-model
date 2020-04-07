@@ -9,6 +9,7 @@ import click
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import OneHotEncoder
+from statsmodels.stats.outliers_influence import variance_inflation_factor
 
 #Local imports
 from src.localpaths import *
@@ -27,6 +28,7 @@ def featurize_X_train(X_train):
     X_train = drop_customer_id(X_train)
     X_train = transform_binary_categorical(X_train)
     X_train = one_hot_encode_categorical_features(X_train)
+    X_train = drop_high_vif_features(X_train)
 
     return X_train
 
@@ -99,6 +101,26 @@ def one_hot_encode_categorical_features(X_train, save_encoder=True):
             pickle.dump(ohe, f)
 
     return X_train
+
+
+def drop_high_vif_features(X_train):
+    """
+    Drops features with a variance inflation factor greater than 10
+    """
+    finished = False
+    while not finished:
+        vifs = [variance_inflation_factor(X_train.values,i) for i in range(len(X_train.columns))]
+        high_vifs = sorted(zip(X_train.columns, vifs), key=lambda x: x[1], reverse=True)
+        high_vif_col, high_vif_value = high_vifs[0]
+        if high_vif_value >= 10:
+            print(f'Dropping column {high_vif_col} as it has {high_vif_value:.1f} >=10')
+            X_train = X_train.drop(columns=[high_vif_col])
+        else:
+            print('finished dropping columns')
+            finished = True
+
+    return X_train
+
 
 
 
