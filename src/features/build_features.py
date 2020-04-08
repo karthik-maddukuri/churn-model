@@ -21,16 +21,16 @@ def cli():
     pass
 
 
-def featurize_X_train(X_train):
+def featurize_X(X):
     """
     Applies featurization to X_train only
     """
-    X_train = drop_customer_id(X_train)
-    X_train = transform_binary_categorical(X_train)
-    X_train = one_hot_encode_categorical_features(X_train)
-    X_train = drop_high_vif_features(X_train)
+    X = drop_customer_id(X)
+    X = transform_binary_categorical(X)
+    X = one_hot_encode_categorical_features(X)
+    X = drop_high_vif_features(X)
 
-    return X_train
+    return X
 
 
 
@@ -44,7 +44,7 @@ def create_featurized_data():
     X_train, y_train = load_training_data(clean=True)
 
     print('Featurizing data')
-    X_train = featurize_X_train(X_train)
+    X_train = featurize_X(X_train)
     y_train = transform_target(y_train)
 
     print('Saving data') 
