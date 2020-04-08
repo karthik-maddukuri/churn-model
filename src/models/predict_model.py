@@ -12,6 +12,7 @@ from sklearn.model_selection import train_test_split, cross_val_score
 
 #Local imports
 from src.data.make_dataset import load_training_data, clean_X
+from  src.features.build_features import featurize_X
 from src.localpaths import *
 
 
@@ -32,6 +33,7 @@ def predict(file_name):
     X = pd.read_csv(file_name)
     # clean and featurize data
     X = clean_X(X)
+    X = featurize_X(X, predict=True)
     # make predictions
 
     # print predictions
