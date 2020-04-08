@@ -21,13 +21,13 @@ def cli():
     pass
 
 
-def featurize_X(X):
+def featurize_X(X, predict=False):
     """
     Applies featurization to X_train only
     """
     X = drop_customer_id(X)
     X = transform_binary_categorical(X)
-    X = one_hot_encode_categorical_features(X)
+    X = one_hot_encode_categorical_features(X, predict=predict)
     X = drop_high_vif_features(X)
 
     return X
@@ -76,15 +76,21 @@ def transform_binary_categorical(X_train):
 
 
 
-def one_hot_encode_categorical_features(X_train, save_encoder=True):
+def one_hot_encode_categorical_features(X_train, save_encoder=True, predict=False):
     """
     This one hot encodes the categorical features, add these to X-train,
     then drops the original columsn. Returns the transformed X_train data as dataframe
     """
+    ohe_filepath = os.path.join(SRC_FEATURES_DIRECTORY, 'ohe-hot-encoder.pkl')
     cols_to_one_hot_encode = X_train.dtypes[X_train.dtypes == 'object'].index
 
-    ohe = OneHotEncoder(drop='first',sparse=False)
-    ohe.fit(X_train[cols_to_one_hot_encode])
+    if predict:
+        with open(ohe_filepath, 'rb') as f:
+            ohe = pickle.load(f)
+
+    else:
+        ohe = OneHotEncoder(drop='first',sparse=False)
+        ohe.fit(X_train[cols_to_one_hot_encode])
 
     ohe_features = ohe.transform(X_train[cols_to_one_hot_encode])
     ohe_feature_names = ohe.get_feature_names(cols_to_one_hot_encode)
@@ -94,7 +100,7 @@ def one_hot_encode_categorical_features(X_train, save_encoder=True):
     X_train = X_train.assign(**ohe_df)
     X_train = X_train.drop(columns=cols_to_one_hot_encode )
 
-    if save_encoder:
+    if save_encoder and not predict:
         ohe_filepath = os.path.join(SRC_FEATURES_DIRECTORY, 'ohe-hot-encoder.pkl')
         print('pickling one-hot-encoder')
         with open(ohe_filepath, 'wb') as f:
