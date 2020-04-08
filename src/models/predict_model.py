@@ -14,6 +14,11 @@ from sklearn.model_selection import train_test_split, cross_val_score
 from src.data.make_dataset import load_training_data, clean_X
 from  src.features.build_features import featurize_X
 from src.localpaths import *
+from src.models.train_model import load_pickled_model
+
+
+PICKLED_MODEL_FILENAME = '1017545180110469376.pkl'
+
 
 
 #decorator
@@ -31,13 +36,19 @@ def predict(file_name):
     """
     # load data
     X = pd.read_csv(file_name)
+
     # clean and featurize data
     X = clean_X(X)
     X = featurize_X(X, predict=True)
+
+    # Load model
+    model = load_pickled_model(PICKLED_MODEL_FILENAME)
+
     # make predictions
+    predictions = model.predict(X)
 
     # print predictions
-    print(X)
+    print(predictions)
 
 
 if __name__ == "__main__":
