@@ -28,7 +28,7 @@ def cli():
 
 @cli.command()
 @click.option('--file-name', type=str, required=True)
-def predict(file_name):
+def predict(file_name, proba=False):
     """
     Predicts Churn or not for all the data in file_name.
     file_name must be a csv and order of the column names must be
@@ -45,7 +45,10 @@ def predict(file_name):
     model = load_pickled_model(PICKLED_MODEL_FILENAME)
 
     # make predictions
-    predictions = model.predict(X)
+    if proba:
+        predictions = model.predict_proba(X)[:, 1]
+    else:
+        predictions = model.predict(X)
 
     # print predictions
     print(predictions)
