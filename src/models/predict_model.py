@@ -26,8 +26,7 @@ PICKLED_MODEL_FILENAME = '1017545180110469376.pkl'
 def cli():
     pass
 
-@cli.command()
-@click.option('--file-name', type=str, required=True)
+
 def predict(file_name, proba=False):
     """
     Predicts Churn or not for all the data in file_name.
@@ -51,7 +50,23 @@ def predict(file_name, proba=False):
         predictions = model.predict(X)
 
     # print predictions
+    return predictions
+
+
+@cli.command()
+@click.option('--file-name', type=str, required=True)
+def click_predict(file_name):
+    """
+    Predicts Churn or not for all the data in file_name.
+    file_name must be a csv and order of the column names must be
+    similar to that of the X_train
+    """
+    
+    predictions = predict(file_name)
     print(predictions)
+
+
+
 
 
 if __name__ == "__main__":
