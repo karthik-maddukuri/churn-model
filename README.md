@@ -38,7 +38,6 @@ Special promos and good customer service can be offered to the customers who are
 ![Tenure](reports/tenure.png)
 ![Having Multiple Lines](reports/MultipleLines_Yes.png)
 ![Having Online Security CURVE](reports/OnlineSecurity_Yes.png)
-![Streaming Movies](reports/StreamingMoives_Yes.png)
 
 * Tenure of the customer had a high impact on customer Churn - The longer the customer is with us, the less likely it is to churn.
 *  The following customer attributes showed high Churn rate:
