@@ -28,7 +28,7 @@ Special promos and good customer service can be offered to the customers who are
     - Addressed multicollinearity by dropping highly correlated features using a cutoff VIF  (Variacne Inflation Factor) of 10
 * Built different models, and settled on AdaBoost model by plotting ROC Curves.
 ![ROC CURVE](reports/ROC_CURVE.png)
-* Tried various hyper-parameter values, but ended up using the defualt parameters except for learning rate. 
+* Tried various hyper-parameter values, but ended up using the default parameters except for the learning rate. 
 
 
 
