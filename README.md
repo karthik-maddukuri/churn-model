@@ -1,15 +1,5 @@
 # CHURN MODEL
 
-<!-- The goal of this project is to predict the churn behavior of customers in an entity. The dataset includes information about the services that each customer has signed up for (phone, internet, online security, tech, TV, etc), customer account info (tenure, contract, payment method, monthly charges, etc), demographic info of the customers (gender, age, etc).
-- **Data Cleaning**
-- **Exploratory Data Analysis**
-- **Data Modeling**
-    - **Learning Curves**
-    - **ROC Curves**
-    - **Multi Collinearity**
-    - **Hyperparameter Tuning**
-- **Model Evaluation** -->
-
 ## The Problem 
 
 In Telco business, there are customers who stop doing business with the entity occasionally. The rate of customers leaving is too high, and we want to (a) predict which customers are going to leave, (b) identify the factors causing the customers to leave.
@@ -18,6 +8,17 @@ In Telco business, there are customers who stop doing business with the entity o
 ## Value of the Problem
 
 Special promos and good customer service can be offered to the customers who are going to leave. Also, if we understand the factors responsible for the churn rate, we can fix them and create a better experience for the customers.
+
+## Project Roadmap
+- **Data Cleaning**
+- **Exploratory Data Analysis**
+- **Data Modeling**
+    - **Learning Curves**
+    - **ROC Curves**
+    - **Multi Collinearity**
+    - **Hyperparameter Tuning**
+- **Model Evaluation**
+
 
 ## Approach and Solution 
 * Although there weren't any missing values, 'TotalCharges' had 8 empty string values. These were imputed with a value of 20.
