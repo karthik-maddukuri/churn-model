@@ -26,11 +26,17 @@ Special promos and good customer service can be offered to the customers who are
     - Transformed categorical features using OneHot Encoding
     - Addressed multicollinearity by dropping highly correlated features using a cutoff VIF  (Variacne Inflation Factor) of 10
 * Built different models, and settled on AdaBoost model by plotting ROC Curves.
+![**ROC CURVE**][reports/ROC_CURVE.png]
 * Tried various hyper-parameter values, but ended up using the defualt parameters except for learning rate. 
+
+
 
 ## Results
 
 **Feature Importances**
+
+<!-- ![ ][reports/] -->
+
 * Tenure of the customer had a high impact on customer Churn - The longer the customer is with us, the less likely it is to churn.
 *  The following customer attributes showed high Churn rate:
     - Multiple Lines
@@ -38,7 +44,7 @@ Special promos and good customer service can be offered to the customers who are
     - No Phone Service
     - Streaming TV and movies
     - Paperless Billing
-    - FiberOptic Internet Service
+    - Fiber optic Internet Service
 
 * The following customer attributes were responsible for customer retention:
     - Having Online backup, security, and tech support
