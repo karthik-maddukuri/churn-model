@@ -17,7 +17,7 @@ from src.localpaths import *
 from src.models.train_model import load_pickled_model
 
 
-PICKLED_MODEL_FILENAME = '1017545180110469376.pkl'
+PICKLED_MODEL_FILENAME = '201006169414151680.pkl'
 
 
 
