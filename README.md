@@ -58,4 +58,4 @@ Special promos and good customer service can be offered to the customers who are
 
 
 ## Evaluating Test Data
-* Evaluated the test model and obtained a ROC_AUC score of 0.8611.
+* Evaluated the test data and obtained a ROC_AUC score of 0.8611.
