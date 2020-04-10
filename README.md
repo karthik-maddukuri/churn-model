@@ -28,8 +28,8 @@ Special promos and good customer service can be offered to the customers who are
     - Addressed multicollinearity by dropping highly correlated features using a cutoff VIF  (Variacne Inflation Factor) of 10
 * Built different models, and settled on AdaBoost model by plotting ROC Curves.
 ![ROC CURVE](reports/ROC_CURVE.png)
-* Tried various hyper-parameter values, but ended up using the default parameters except for the learning rate. 
-
+* Optimized the hyperparameters using Random Search. The best hyperparameters for the model are n_estimators of 135 and learning rate of 0.2.
+* After Hyperparameter tuning, partial dependence plot of Tenure showed that as tenure increased, it was much less likely for the customer to churn than before.
 
 
 ## Results
@@ -53,9 +53,9 @@ Special promos and good customer service can be offered to the customers who are
     - Having Online backup, security, and tech support
     - No internet service (Streaming Movies) 
     - One year or two year contracts
-    - Payment method - Mail Check
+    - Payment method - Mailed Check
 
 
 
 ## Evaluating Test Data
-* Evaluated the test model and obtained a ROC_AUC score of 0.859.
+* Evaluated the test model and obtained a ROC_AUC score of 0.8611.
