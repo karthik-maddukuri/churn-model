@@ -25,7 +25,7 @@ Special promos and good customer service can be offered to the customers who are
 * Featurize Data:
     - Dropped the CustomerId column
     - Transformed categorical features using OneHot Encoding
-    - Addressed multicollinearity by dropping highly correlated features using a cutoff VIF  (Variacne Inflation Factor) of 10
+    - Addressed multicollinearity by dropping highly correlated features using a cutoff VIF  (Variance Inflation Factor) of 10
 * Built different models, and settled on AdaBoost model by plotting ROC Curves.
 ![ROC CURVE](reports/ROC_CURVE.png)
 * Optimized the hyperparameters using Random Search. The best hyperparameters for the model are n_estimators of 135 and learning rate of 0.2.
