@@ -59,3 +59,11 @@ Special promos and good customer service can be offered to the customers who are
 
 ## Evaluating Test Data
 * Evaluated the test data and obtained a ROC_AUC score of 0.8611.
+
+## References
+
+* [Cookiecutter Data Science - A logical, reasonably standardized, but flexible project structure for doing and sharing data science work](https://drivendata.github.io/cookiecutter-data-science/)
+* [OneHot Encoding](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.OneHotEncoder.html)
+* [Multi Collinearity - Variance Inflation Factor (VIF)](https://www.statsmodels.org/0.6.1/generated/statsmodels.stats.outliers_influence.variance_inflation_factor.html)
+* [Random Search Hyperparameter Tuning](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.RandomizedSearchCV.html)
+* [AdaBoost Classifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.AdaBoostClassifier.html)
